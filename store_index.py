@@ -10,8 +10,6 @@ api_key = os.environ.get('PINECONE_API_KEY')
 PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
 PINECONE_API_ENV = os.environ.get('PINECONE_API_ENV')
 
-# print(PINECONE_API_KEY)
-# print(PINECONE_API_ENV)
 
 extracted_data = load_pdf("data/")
 text_chunks= text_split(extracted_data)
@@ -75,5 +73,5 @@ from langchain import *
 import os
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import OpenAIEmbeddings
-os.environ['PINECONE_API_KEY'] = 'de5d8457-bc86-42f7-b31d-cbe240b928b4'
+os.environ['PINECONE_API_KEY'] = '**************************************'
 docsearch = langchain_pinecone.PineconeVectorStore.from_texts([t.page_content for t in text_chunks],embeddings,index_name="medical-chatbot")
